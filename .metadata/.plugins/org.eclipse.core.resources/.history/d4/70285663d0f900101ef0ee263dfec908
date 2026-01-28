@@ -1,0 +1,31 @@
+package org.gemini;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+public class MenuBar extends Crazygames  {
+	
+	@BeforeMethod
+	public void print() {
+		
+	}
+	@Test
+public void menuFunctions(WebDriver driver) {
+		WebDriver d=driver;
+	//System.out.println("kp");
+		d.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+		WebElement element = d.findElement(By.xpath("//a[@aria-label='Recently played']"));
+		element.click();
+	//WebElement element = d.findElement(By.xpath("//button[@aria-label='Open/Close sidebar']"));
+	//element.click();
+}
+	@AfterMethod
+	public void print1() {
+		
+	}
+	
+}

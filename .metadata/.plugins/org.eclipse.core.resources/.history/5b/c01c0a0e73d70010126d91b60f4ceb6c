@@ -1,0 +1,12 @@
+import org.openqa.selenium.*;
+import org.openqa.selenium.edge.EdgeDriver;
+public class Selenium2 {
+public static void main(String args[]) throws InterruptedException {
+	System.out.println("webdriver.edge.driver,C:\\Users\\91877\\eclipse-workspace\\New folder (2)\\IntroSelenium\\driver\\msedgedriver.exe");
+	WebDriver driver=new EdgeDriver();
+	driver.get("https://www.amazon.com");
+	Thread.sleep(2000);
+	driver.manage().window().maximize();
+	driver.quit();
+}
+}

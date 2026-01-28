@@ -1,0 +1,9 @@
+package org.gemini;
+import org.testng.annotations.Test;
+public class MenuBar extends Crazygames {
+	@Test
+public void menuFunctions() {
+	System.out.println("kp");
+	
+}
+}

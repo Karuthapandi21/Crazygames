@@ -1,0 +1,21 @@
+package org.gemini;
+
+import org.openqa.selenium.By;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class LogIn extends Crazygames {
+	@Test
+public void loginButton() {
+	driver.findElement(By.xpath("//button[@id='header-login-button']")).click();
+}
+	@BeforeMethod
+	public void method() {
+		
+	}
+	@AfterMethod
+	public void function() {
+		
+	}
+}

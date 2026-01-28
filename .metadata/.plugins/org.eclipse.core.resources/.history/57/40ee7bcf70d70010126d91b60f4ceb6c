@@ -1,0 +1,9 @@
+import org.openqa.selenium.*;
+import org.openqa.selenium.edge.EdgeDriver;
+public class Selenium2 {
+public static void main(String args[]) {
+	System.out.println("webdriver.edge.driver,C:\\Users\\91877\\eclipse-workspace\\New folder (2)\\IntroSelenium\\driver\\msedgedriver.exe");
+	WebDriver driver=new EdgeDriver();
+	driver.get("amazon.com");
+}
+}

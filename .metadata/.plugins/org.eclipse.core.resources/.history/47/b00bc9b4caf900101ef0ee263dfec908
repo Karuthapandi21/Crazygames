@@ -1,0 +1,24 @@
+package org.gemini;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+public class MenuBar extends Crazygames  {
+	@BeforeMethod
+	public void print() {
+		
+	}
+	@Test
+public void menuFunctions() {
+	//System.out.println("kp");
+		driver.manage().window().maximize();
+	WebElement element = driver.findElement(By.xpath("//button[@aria-label='Open/Close sidebar']"));
+	element.click();
+}
+	@AfterMethod
+	public void print1() {
+		
+	}
+	
+}

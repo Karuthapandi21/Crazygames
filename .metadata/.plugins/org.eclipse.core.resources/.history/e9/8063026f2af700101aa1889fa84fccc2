@@ -1,0 +1,14 @@
+package org.gemini;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+public class Search extends Crazygames {
+public Search() {
+	PageFactory.initElements(driver,this);	
+}
+@FindBy(id="search-input")
+private WebElement element;
+public WebElement giveName() {
+	return element;
+}
+}

@@ -1,0 +1,7 @@
+package org.gemini;
+public class PlayButton extends Crazygames {
+	public void play() {
+		driver.findElement(null);
+	}
+
+}

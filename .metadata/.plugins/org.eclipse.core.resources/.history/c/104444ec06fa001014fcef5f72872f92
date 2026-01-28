@@ -1,0 +1,29 @@
+package org.gemini;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class LogIn extends Crazygames {
+	@Test
+public void loginButton(WebDriver driver) throws InterruptedException {
+		WebDriver h=driver;
+		h.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+	h.findElement(By.xpath("//button[@id='header-login-button']")).click();
+	Thread.sleep(1000);
+	h.findElement(By.xpath("//div[@class='nsm7Bb-HzV7m-LgbsSe-BPrWId']")).click();
+	
+}
+	@BeforeMethod
+	public void method() {
+		
+	}
+	@AfterMethod
+	public void function() {
+		
+	}
+}

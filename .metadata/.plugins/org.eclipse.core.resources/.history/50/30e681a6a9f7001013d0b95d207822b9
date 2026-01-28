@@ -1,0 +1,13 @@
+package org.gemini;
+
+//import org.openqa.selenium.support.PageFactory;
+
+public class SearchFunction extends Crazygames{
+	public SearchFunction() {
+		//PageFactory.initElements(driver, SearchFunction.class);
+		System.out.println("karthi");
+	}
+	public void display() {
+		System.out.println("karthi");
+	}
+}

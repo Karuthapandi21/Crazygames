@@ -1,0 +1,75 @@
+package org.gemini;
+import java.awt.AWTException;
+
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+import io.github.bonigarcia.wdm.WebDriverManager;
+public class Crazygames  {
+	public WebDriver driver;
+	@Parameters("browser")
+	@BeforeMethod
+	public void browserLanuch(String browser)  {
+		if(browser.equalsIgnoreCase("edge")) {
+			WebDriverManager.edgedriver().setup();
+			 driver=new EdgeDriver();}
+			else if(browser.equalsIgnoreCase("chrome")){
+			{WebDriverManager.chromedriver().setup();
+			 driver=new ChromeDriver();}	
+			}
+			else {
+				System.out.println("Invalid Browser");
+			}
+		driver.manage().window().maximize();
+		driver.get("https://www.crazygames.com");
+	}
+	
+	@Test
+	public void searchGame()  throws AWTException, InterruptedException{
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		WebElement e=driver.findElement(By.id("search-input"));
+		e.sendKeys("Super Star Car");
+		Robot r=new Robot();
+		r.keyPress(KeyEvent.VK_ENTER);
+		r.keyRelease(KeyEvent.VK_ENTER);
+		Thread.sleep(1000);
+		WebElement a=driver.findElement(By.xpath("//a[@href='https://www.crazygames.com/game/super-star-car']"));
+		a.click();
+		Thread.sleep(5000);
+		WebElement b = driver.findElement(By.xpath("//div[@class='GameContainer']"));
+		b.click();
+		driver.switchTo().frame(0);
+		driver.findElement(By.xpath("//iframe[@id='game-iframe']"));
+		WebElement l = driver.findElement(By.xpath("//div[@class='MuiGrid-root MuiGrid-item css-16hlm1x'][3]"));
+		//JavascriptExecutor js=(JavascriptExecutor)driver;
+		//js.executeScript("arguements[1].click();", l);
+		Actions ac=new Actions(driver);
+		ac.click(l).perform();
+		//b.click();
+		//b1.click();
+//		WebElement frameWebelement = driver.findElement(By.xpath("//iframe[@title='Snakes and Ladders']"));	
+//		Thread.sleep(5000);		//driver.switchTo().defaultContent();
+//		driver.switchTo().frame(frameWebelement);
+		//WebElement element = driver.findElement(By.xpath("//canvas[@id='canvas']"));
+		//JavascriptExecutor js=(JavascriptExecutor)driver;
+		//js.executeScript("arguments[0].click();", element);
+		
+		}
+	@AfterMethod
+	public void exit() {
+		driver.quit();
+	}
+		
+}
